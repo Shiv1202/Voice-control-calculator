@@ -13,4 +13,14 @@ def tan_value(num):
     val = num[0]
     return round(math.tan(math.radians(val)), 3)
 
-# sin_value([45])
+def sinh_value(num):
+    val = num[0]
+    return round(math.sinh(math.radians(val)), 3)
+
+def cosh_value(num):
+    val = num[0]
+    return round(math.cosh(math.radians(val)), 3)
+
+def tanh_value(num):
+    val = num[0]
+    return round(math.tanh(math.radians(val)), 3)

@@ -12,9 +12,9 @@ from functions_for_power_calculation import (find_sqrt,
 )
 
 from trigonometry import (
-    sin_value,
-    cos_value,
-    tan_value,
+    sin_value, sinh_value,
+    cos_value, cosh_value,
+    tan_value, tanh_value,
 )
 print("Your Speech Recognition version is: " + sr.__version__)
 
@@ -64,6 +64,7 @@ if __name__ == "__main__":
     greeting()
     command = my_command()
     command = command.lower()
+
     if "square" in command:
         res = square(list(map(int, re.findall(r'\d+', command))))
         response(f"Square is: {res}")
@@ -90,5 +91,24 @@ if __name__ == "__main__":
     
     if re.search("sine of", command):
         res = sin_value(list(map(int, re.findall(r'\d+', command))))
-        response(f"sine value is: {res}")
+        response(f"Sine value is: {res}")
     
+    if re.search("cos of", command):
+        res = cos_value(list(map(int, re.findall(r'\d+', command))))
+        response(f"Cos value is: {res}")
+
+    if re.search("tan of", command):
+        res = tan_value(list(map(int, re.findall(r'\d+', command))))
+        response(f"Tan value is: {res}")
+    
+    if re.search("hyperbolic sine", command):
+        res = sinh_value(list(map(int, re.findall(r'\d+', command))))
+        response(f"Hyperbolic sine is: {res}")
+
+    if re.search("hyperbolic cos", command):
+        res = cosh_value(list(map(int, re.findall(r'\d+', command))))
+        response(f"Hyperbolic cos is: {res}")
+
+    if re.search("hyperbolic tan", command):
+        res = tanh_value(list(map(int, re.findall(r'\d+', command))))
+        response(f"Hyperboic tan is: {res}")
