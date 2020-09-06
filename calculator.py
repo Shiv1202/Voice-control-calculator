@@ -3,7 +3,7 @@ import speech_recognition as sr
 import pyttsx3
 import datetime
 import re
-from functions_for_power_calculation import find_sqrt, cude_root, power
+from functions_for_power_calculation import find_sqrt, cube_root, power
 
 print("Your Speech Recognition version is: " + sr.__version__)
 
