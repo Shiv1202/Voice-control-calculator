@@ -15,6 +15,7 @@ from trigonometry import (
     sin_value, sinh_value,
     cos_value, cosh_value,
     tan_value, tanh_value,
+    log,
 )
 print("Your Speech Recognition version is: " + sr.__version__)
 
@@ -112,3 +113,8 @@ if __name__ == "__main__":
     if re.search("hyperbolic tan", command):
         res = tanh_value(list(map(int, re.findall(r'\d+', command))))
         response(f"Hyperboic tan is: {res}")
+
+    if re.search("log of", command):
+        num = list(map(int, re.findall(r'\d+', command)))
+        res = log(num)
+        response(f"Log of {num[0]} base {num[1]} is: {res}")

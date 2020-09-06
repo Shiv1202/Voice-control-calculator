@@ -24,3 +24,8 @@ def cosh_value(num):
 def tanh_value(num):
     val = num[0]
     return round(math.tanh(math.radians(val)), 3)
+
+def log(num):
+    val = num[0]
+    base = num[1]
+    return round(math.log(val, base), 3)
