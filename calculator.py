@@ -18,7 +18,12 @@ engine.setProperty('rate', rate-62)
 
 def response(audio):
     print(f"Calc: {audio}")
-    engine.say(f"The answer is {audio}")
+    if "how may i help you" in audio:
+        engine.say(audio)
+    elif "Sorry" in audio:
+        engine.say(audio)
+    else:
+        engine.say(f"The answer is {audio}")
     engine.runAndWait()
 
 def my_command():
@@ -44,12 +49,13 @@ def greeting():
         response("Good Afternoon boss! how may i help you.")
     if curr_time >= 17 and curr_time != 0:
         response("Good Evening boss! how may i help you.")
-# greeting()
+
 
 
 
 if __name__ == "__main__":
     
+    greeting()
     command = my_command()
     command = command.lower()
     if "square root" in command:
