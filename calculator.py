@@ -10,6 +10,12 @@ from functions_for_power_calculation import (find_sqrt,
     square,
     cube,
 )
+
+from trigonometry import (
+    sin_value,
+    cos_value,
+    tan_value,
+)
 print("Your Speech Recognition version is: " + sr.__version__)
 
 engine = pyttsx3.init()
@@ -59,14 +65,30 @@ if __name__ == "__main__":
     command = my_command()
     command = command.lower()
     if "square" in command:
-        response(square(list(map(int, re.findall(r'\d+', command)))))
-    if "cube" in command:
-        response(cube(list(map(int, re.findall(r'\d+', command)))))
+        res = square(list(map(int, re.findall(r'\d+', command))))
+        response(f"Square is: {res}")
+    
+    if "cube of" in command:
+        res = cube(list(map(int, re.findall(r'\d+', command))))
+        response(f"Cube is {res}")
+    
     if "square root" in command:
-        response(find_sqrt(list(map(int, re.findall(r'\d+', command)))))
+        res = find_sqrt(list(map(int, re.findall(r'\d+', command))))
+        response(f"Square root is: {res}")
+    
     if "is to the power" in command or "power" in command:
-        response(power(list(map(int, re.findall(r'\d+', command)))))
+        res = power(list(map(int, re.findall(r'\d+', command))))
+        response(f"Result is {res}")
+    
     if "cube root" in command:
-        response(cube_root(list(map(int, re.findall(r'\d+', command)))))
+        res = cube_root(list(map(int, re.findall(r'\d+', command))))
+        response(f"Cube root is: {res}")
+    
     if "factorial" in command:
-        response(fact(list(map(int, re.findall(r'\d+', command)))))
+        res = fact(list(map(int, re.findall(r'\d+', command))))
+        response(f"Factorial is: {res}")
+    
+    if re.search("sine of", command):
+        res = sin_value(list(map(int, re.findall(r'\d+', command))))
+        response(f"sine value is: {res}")
+    

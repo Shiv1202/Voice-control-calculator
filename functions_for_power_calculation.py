@@ -2,7 +2,10 @@ import math
 
 def find_sqrt(num):
     x = math.sqrt(num[0])
-    return x if int(x) == x else x
+    if int(x) == x:
+        return int(x)
+    else: 
+        return round(x, 3)
 
 
 def power(num):
@@ -30,4 +33,8 @@ def cube(num):
 
 def cube_root(num):
     digit = num[0]
-    return math.pow(digit, 1/3)
+    res = math.pow(digit, 1/3)
+    if int(res) == res:
+        return int(res)
+    else:
+        return round(res, 3)
