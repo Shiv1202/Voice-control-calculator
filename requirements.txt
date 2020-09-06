@@ -4,7 +4,7 @@ comtypes==1.1.7
 isort==5.5.0
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
-PyAudio @ file:///C:/Users/Shivansh%20Tiwari/Downloads/PyAudio-0.2.11-cp37-cp37m-win_amd64.whl
+PyAudio==0.2.11
 pylint==2.6.0
 pypiwin32==223
 pyttsx3==2.90
