@@ -1,16 +1,21 @@
-import operator as op
-def get_operator_func(opr):
-    return {
-        '+': op.add,
-        '-': op.sub,
-        'x': op.mul,
-        'divided': op.__truediv__,
-        'divide by': op.__truediv__,
-        'Mod': op.mod,
-        'mod': op.mod,
-        'and': op.and_, 
-    }[opr]
+def add(num):
+    return sum(num)
 
-def eval_expression(num1, oper, num2):
-    num1, num2 = int(num1), int(num2)
-    return get_operator_func(oper)(num1, num2)
+
+def sub(num):
+    ans = num[0]
+    for i in range(1, len(num)):
+        ans -= num[i]
+    return ans
+
+def multiply(num):
+    ans = num[0]
+    for i in range(1, len(num)):
+        ans *= num[i]
+    return ans
+
+def divide(num):
+    res = num[0] / num[1]
+    if int(res) == res:
+        return int(res)
+    return res

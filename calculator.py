@@ -4,6 +4,9 @@ import pyttsx3
 import datetime
 from factorial import fact
 import re
+from basic_calculation import (
+    add, sub, multiply, divide
+)
 from functions_for_power_calculation import (find_sqrt, 
     cube_root,
     power,
@@ -65,6 +68,26 @@ if __name__ == "__main__":
     greeting()
     command = my_command()
     command = command.lower()
+
+    if "plus" in command or "sum" in command or "add" in command:
+        res = add(list(map(int, re.findall(r'\d+', command))))
+        response(f"Total is: {res}")
+
+    if "minus" in command or "substract" in command:
+        res = add(list(map(int, re.findall(r"\d+", command))))
+        response(f"Result is: {res}")
+
+    if 'multiply' in command or "product" in command:
+        res = multiply(list(map(int, re.findall(r'\d+', command))))
+        response(f"Product is: {res}")
+
+    if "divide by" in command or "division" in command:
+        nums = list(map(int, re.findall(r'\d+', command)))
+        if 0 in nums[1:]:
+            response("Divisin by 0 is not valid expression.")
+        else:
+            res = multiply(nums)
+            response(f"Result is: {res}")
 
     if "square" in command:
         res = square(list(map(int, re.findall(r'\d+', command))))
