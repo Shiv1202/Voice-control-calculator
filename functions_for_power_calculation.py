@@ -4,6 +4,7 @@ def find_sqrt(num):
     x = math.sqrt(num[0])
     return x if int(x) == x else x
 
+
 def power(num):
     if len(num) < 2:
         return "Please input both base and power for calculation."
@@ -18,6 +19,14 @@ def power(num):
             return x * temp * temp
         else:
             return (temp * temp) / x
+
+def square(num):
+    x = num[0]
+    return power([x, 2])
+
+def cube(num):
+    x = num[0]
+    return power([x, 3])
 
 def cube_root(num):
     digit = num[0]
