@@ -33,7 +33,7 @@ engine.setProperty('rate', rate-62)
 
 def response(audio):
     print(f"Calc: {audio}")
-    engine.say({audio})
+    engine.say(audio)
     engine.runAndWait()
 
 def my_command():
@@ -69,20 +69,20 @@ if __name__ == "__main__":
     command = my_command()
     command = command.lower()
 
-    if "plus" in command or "sum" in command or "add" in command:
-        res = add(list(map(int, re.findall(r'\d+', command))))
+    if "+" in command or "sum" in command or "add" in command:
+        res = add(list(map(str, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Total is: {res}")
 
     if "minus" in command or "substract" in command:
-        res = add(list(map(int, re.findall(r"\d+", command))))
+        res = add(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Result is: {res}")
 
     if 'multiply' in command or "product" in command:
-        res = multiply(list(map(int, re.findall(r'\d+', command))))
+        res = multiply(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Product is: {res}")
 
     if "divide by" in command or "division" in command:
-        nums = list(map(int, re.findall(r'\d+', command)))
+        nums = list(map(int, re.findall(r"[-+]?\d*\.?\d+", command)))
         if 0 in nums[1:]:
             response("Divisin by 0 is not valid expression.")
         else:
@@ -90,54 +90,54 @@ if __name__ == "__main__":
             response(f"Result is: {res}")
 
     if "square" in command:
-        res = square(list(map(int, re.findall(r'\d+', command))))
+        res = square(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Square is: {res}")
     
     if "cube of" in command:
-        res = cube(list(map(int, re.findall(r'\d+', command))))
+        res = cube(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Cube is {res}")
     
     if "square root" in command:
-        res = find_sqrt(list(map(int, re.findall(r'\d+', command))))
+        res = find_sqrt(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Square root is: {res}")
     
     if "is to the power" in command or "power" in command:
-        res = power(list(map(int, re.findall(r'\d+', command))))
+        res = power(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Result is {res}")
     
     if "cube root" in command:
-        res = cube_root(list(map(int, re.findall(r'\d+', command))))
+        res = cube_root(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Cube root is: {res}")
     
     if "factorial" in command:
-        res = fact(list(map(int, re.findall(r'\d+', command))))
+        res = fact(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Factorial is: {res}")
     
     if re.search("sine of", command):
-        res = sin_value(list(map(int, re.findall(r'\d+', command))))
+        res = sin_value(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Sine value is: {res}")
     
     if re.search("cos of", command):
-        res = cos_value(list(map(int, re.findall(r'\d+', command))))
+        res = cos_value(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Cos value is: {res}")
 
     if re.search("tan of", command):
-        res = tan_value(list(map(int, re.findall(r'\d+', command))))
+        res = tan_value(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Tan value is: {res}")
     
     if re.search("hyperbolic sine", command):
-        res = sinh_value(list(map(int, re.findall(r'\d+', command))))
+        res = sinh_value(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Hyperbolic sine is: {res}")
 
     if re.search("hyperbolic cos", command):
-        res = cosh_value(list(map(int, re.findall(r'\d+', command))))
+        res = cosh_value(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Hyperbolic cos is: {res}")
 
     if re.search("hyperbolic tan", command):
-        res = tanh_value(list(map(int, re.findall(r'\d+', command))))
+        res = tanh_value(list(map(int, re.findall(r"[-+]?\d*\.?\d+", command))))
         response(f"Hyperboic tan is: {res}")
 
     if re.search("log of", command):
-        num = list(map(int, re.findall(r'\d+', command)))
+        num = list(map(int, re.findall(r"[-+]?\d*\.?\d+", command)))
         res = log(num)
         response(f"Log of {num[0]} base {num[1]} is: {res}")
