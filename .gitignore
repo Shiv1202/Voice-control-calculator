@@ -2,3 +2,6 @@
 /calc
 
 /__pycache__
+
+*.png
+calculator_gui.py
