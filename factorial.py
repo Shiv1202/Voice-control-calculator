@@ -1,5 +1,5 @@
 def fact(num):
-    val = num[0]
+    val = int(num[0])
 
     dp = [0] * (val + 1)
     dp[0] = 1
